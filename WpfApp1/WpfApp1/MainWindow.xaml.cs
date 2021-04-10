@@ -35,7 +35,8 @@ namespace WpfApp2
 
             var cr = new QuadraticEquation(x,y,r);
 
-            Result.Text = cr.Zapis;
+            Result.Text = cr.ToString();
+            P.Text = cr.Zapis;
         }
     }
 }
