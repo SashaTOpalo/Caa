@@ -23,20 +23,54 @@ namespace WpfApp2
             InitializeComponent();
         }
 
-   
-
-
-        private void firstButton_Click(object sender, RoutedEventArgs e)
+        [Serializable]
+        class CvadratneRivnyanya : IComparable<CvadratneRivnyanya>
         {
-            var x = decimal.Parse(X.Text);
-            var y = decimal.Parse(Y.Text);
-            var r = decimal.Parse(R.Text);
+            private int _coeficient1;
+            private string _zapis;
+            public int Coeficient1
+            {
+                get { return _coeficient1; }
+                set
+                {
+                    if (value >= 0)
+                    {
+                        _coeficient1 = value;
+                    }
+                }
+            }
+            public int Coeficient2 { get; set; }
+            public int Coeficient3 { get; set; }
+            public CvadratneRivnyanya(int coeficient1Value, int
 
+            coeficient2Value, int coeficient3Value, string zapisValue)
 
-            var cr = new QuadraticEquation(x,y,r);
+            {
+                _zapis = zapisValue;
+                _coeficient1 = coeficient1Value;
+                Coeficient3 = coeficient3Value;
+                Coeficient2 = coeficient2Value;
+            }
+            public int CompareTo(CvadratneRivnyanya other)
+            {
+                if (Coeficient1 == other.Coeficient1)
+                {
+                    return 0;
+                }
+                else
+                if (Coeficient1 > other.Coeficient1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            public override string ToString()
+            {
+                return String.Format("Перший коефіціент рівняння:{ 0}\n Другий коефіціент рівняння: { 1}\nТретій коефіціент рівняння: { 2}\n Запис у
+текстовому вигляді: { 3}", _coeficient1, Coeficient2, Coeficient3, _zapis);
 
-            Result.Text = cr.ToString();
-            P.Text = cr.Zapis;
-        }
-    }
 }
+        }

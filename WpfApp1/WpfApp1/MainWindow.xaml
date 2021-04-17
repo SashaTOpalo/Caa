@@ -27,7 +27,7 @@ Height="31" Margin="188,96,0,0" VerticalAlignment="Top" Width="197"
 RenderTransformOrigin="0.931,-1.824"/>
         <TextBox x:Name = "P" HorizontalAlignment="Left" Height="34"
 Margin="10,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
-Width="150"/>
+Width="150" TextChanged="P_TextChanged"/>
         <Label Content="Запис у текстовому вигляді" HorizontalAlignment="Left"
 Height="34" Margin="188,134,0,0" VerticalAlignment="Top" Width="208"/>
     </Grid>
